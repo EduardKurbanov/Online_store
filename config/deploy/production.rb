@@ -62,7 +62,7 @@
 
 server '164.90.225.55', user: "#{fetch(:user)}", roles: %w{app db web}, primary: true
 
-set :application, 'app name'
+set :application, 'online_store'
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
 set :environment, 'production'

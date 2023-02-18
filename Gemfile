@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+#gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -101,6 +101,11 @@ group :development do
   gem 'capistrano-nginx'
   gem 'capistrano-upload-config'
   gem 'sshkit-sudo'
+end
+
+group :production do
+  # Use postgres as the database for production
+  gem 'pg'
 end
 
 

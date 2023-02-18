@@ -10,11 +10,7 @@ class LineItemsController < ApplicationController
     else
       @line_item = current_cart.line_items.create(product: product)
     end
-#    redirect_back fallback_location: home_path
-    respond_to do |format|
-      format.html { redirect_to line_item_path(id: @line_item.id) }
-      format.turbo_stream
-    end
+    redirect_back fallback_location: home_path
   end
 
   def destroy
@@ -28,11 +24,7 @@ class LineItemsController < ApplicationController
     if @line_item.quantity <= 1
       @line_item.update(quantity: @line_item.quantity = 1)
     end
-#    redirect_back fallback_location: cart_path
-    respond_to do |format|
-      format.html { redirect_to cart_path }
-      format.turbo_stream
-    end
+    redirect_back fallback_location: cart_path
   end
 
   def set_line_item

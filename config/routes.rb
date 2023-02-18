@@ -1,12 +1,6 @@
-require 'sidekiq/web'
-
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-
-  authenticate :admin_user do
-    mount Sidekiq::Web => '/admin/sidekiq'
-  end
 
   devise_for :users
 
@@ -18,7 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :products, only: %i[show index update]
+  resources :products, only: %i[show index]
   resources :categories, only: %i[show index]
   resources :line_items, only: %i[create destroy update]
   resources :orders, only: %i[create show index new update]

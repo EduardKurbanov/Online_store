@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-#gem "pg", "~> 1.1"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -29,7 +29,7 @@ gem "jbuilder"
 
 gem "activeadmin"
 
-gem "sass-rails"
+#gem "sass-rails"
 
 gem "devise"
 
@@ -37,13 +37,11 @@ gem "bootstrap", "~> 5.2.3"
 
 gem "pagy"
 
-gem "sidekiq"
-
-gem "sidekiq-scheduler"
+gem "net-http"
 
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+# gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -58,17 +56,10 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-#gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
-
-gem 'net-smtp', require: false
-gem 'net-imap', require: false
-gem 'net-pop', require: false
-
-gem "ed25519", ">= 1.2", "< 2.0"
-gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -96,18 +87,5 @@ group :development do
 
   #Preview email in the default browser instead of sending it.
   gem "letter_opener", group: :development
-
-  gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma'
-  gem 'capistrano-nginx'
-  gem 'capistrano-upload-config'
-  gem 'sshkit-sudo'
 end
-
-group :production do
-  gem "pg"
-end
-
 

@@ -11,4 +11,4 @@ User.destroy_all
 AdminUser.destroy_all
 
 User.create!(email: 'user@ukr.com', password: 'password', password_confirmation: 'password')
-AdminUser.create!(email: 'admin@ukr.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin@ukr.com', password: 'password', password_confirmation: 'password') if Rails.env.production?

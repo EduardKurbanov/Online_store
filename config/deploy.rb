@@ -77,7 +77,7 @@ namespace :deploy do
 #    end
 #  end
 
-  after 'deploy:seed'
+#  after 'deploy:seed'
 end
 
 after 'deploy:finished', 'nginx:restart'

@@ -90,7 +90,7 @@ task :seed do
     end
    end
 
-   after 'deploy:reset','deploy:seed'
+   after 'deploy:restart','deploy:seed'
 end
 
 after 'deploy:finished', 'nginx:restart'

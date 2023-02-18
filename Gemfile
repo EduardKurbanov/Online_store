@@ -37,7 +37,10 @@ gem "bootstrap", "~> 5.2.3"
 
 gem "pagy"
 
-gem "net-http"
+
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
 
 # Use Redis adapter to run Action Cable in production
@@ -86,6 +89,17 @@ group :development do
   gem 'bullet'
 
   #Preview email in the default browser instead of sending it.
-  gem "letter_opener", group: :development
+  #gem "letter_opener", group: :development
+
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'capistrano-nginx'
+  gem 'capistrano-upload-config'
+  gem 'sshkit-sudo'
 end
+
+
+
 

@@ -63,10 +63,7 @@ namespace :deploy do
   before 'check:linked_files', 'set:master_key'
   before 'check:linked_files', 'config:push'
   before 'check:linked_files', 'puma:jungle:setup'
-  task :seed do
-    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
-  end
-  #load 'lib/deploy/seed'
+
 
 
   desc 'Runs rake db:seed for SeedMigrations data'

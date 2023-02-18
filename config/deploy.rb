@@ -66,7 +66,7 @@ namespace :deploy do
   task :seed do
     run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
   end
-  load 'lib/deploy/seed'
+  #load 'lib/deploy/seed'
 
 
   desc 'Runs rake db:seed for SeedMigrations data'

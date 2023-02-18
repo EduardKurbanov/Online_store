@@ -20,7 +20,6 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-AdminUser.create!(email: 'admin@ukr.com', password: 'password', password_confirmation: 'password')
 
 module OnlineStore
   class Application < Rails::Application

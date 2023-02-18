@@ -64,4 +64,4 @@ Product.create([
 
 
 User.create!(email: 'user@ukr.com', password: 'password', password_confirmation: 'password')
-AdminUser.create!(email: 'admin@ukr.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin@ukr.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.3"
+#ruby "3.1.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-#gem "pg", "~> 1.1"
+gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -29,7 +29,7 @@ gem "jbuilder"
 
 gem "activeadmin"
 
-#gem "sass-rails"
+gem "sass-rails"
 
 gem "devise"
 
@@ -37,17 +37,15 @@ gem "bootstrap", "~> 5.2.3"
 
 gem "pagy"
 
+gem "sidekiq"
 
-gem 'net-smtp', require: false
-gem 'net-imap', require: false
-gem 'net-pop', require: false
+gem "sidekiq-scheduler"
 
-gem "ed25519", ">= 1.2", "< 2.0"
-gem "bcrypt_pbkdf", ">= 1.0", "< 2.0"
+gem "redis-rails"
 
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+#gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -62,7 +60,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-gem "sassc-rails"
+#gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -72,7 +70,13 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   #Preview email in the default browser instead of sending it.
-  #gem "letter_opener", group: :development
+  gem "letter_opener", group: :development
+
+  #The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes
+  gem 'bullet'
+
+  # Add a comment summarizing the current schema to the top or bottom
+  gem "annotate"
 end
 
 group :development do
@@ -85,29 +89,5 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  # Add a comment summarizing the current schema to the top or bottom
-  gem "annotate"
-
-  #The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes
-  gem 'bullet'
-
-  #Preview email in the default browser instead of sending it.
-  #gem "letter_opener", group: :development
-
-  gem 'capistrano'
-  gem 'capistrano-rvm'
-  gem 'capistrano-rails'
-  gem 'capistrano3-puma'
-  gem 'capistrano-nginx'
-  gem 'capistrano-upload-config'
-  gem 'sshkit-sudo'
 end
-
-group :production do
-  # Use postgres as the database for production
-  gem 'pg'
-end
-
-
-
 

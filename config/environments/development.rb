@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.after_initialize do
-    Bullet.enable        = false
+    Bullet.enable        = true
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
@@ -80,4 +80,13 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Enable magick gem
+  config.active_storage.variant_processor = :mini_magick
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_controller.default_url_options = { host: 'localhost', port: 3000 }
+
+  routes.default_url_options[:host] = 'localhost:3000'
 end
